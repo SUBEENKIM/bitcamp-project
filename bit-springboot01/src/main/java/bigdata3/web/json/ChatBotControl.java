@@ -33,7 +33,7 @@ public class ChatBotControl {
 		} else if (state.equals("off")) {
 			return new JsonResult(STATE_SUCCESS, dataMap);
 		} else {
-			return new JsonResult(STATE_FAIL, state);
+			return new JsonResult(STATE_FAIL, dataMap);
 		}
 	}
 
