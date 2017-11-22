@@ -18,7 +18,7 @@ const handleReceiveMessage = (event) => {
       sendAPI.sendLedMessage(senderID);
     }else if(messageText.startsWith('searchAddress')){
       try{
-        var arr = str.split(':')[1].split('=')
+        var arr = messageText.split(':')[1].split('=')
         openAPI.searchNewAddress(arr[0],arr[1])
 
       }catch (err) {
