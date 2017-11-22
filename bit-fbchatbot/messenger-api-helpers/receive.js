@@ -1,5 +1,5 @@
 const sendAPI = require('./send');
-const sendAPI = require('../rest-api/openapi');
+const openAPI = require('../rest-api/openapi');
 
 const handleReceiveMessage = (event) => {
     var senderID = event.sender.id;
