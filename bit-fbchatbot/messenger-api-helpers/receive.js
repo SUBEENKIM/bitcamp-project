@@ -16,6 +16,7 @@ const handleReceiveMessage = (event) => {
 
     if (messageText == 'led'){
       sendAPI.sendLedMessage(senderID);
+      console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
     }else{
       sendAPI.sendTextMessage(senderID,messageText);
     }
