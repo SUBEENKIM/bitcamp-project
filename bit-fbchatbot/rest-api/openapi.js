@@ -26,12 +26,9 @@ const searchNewAddress = (type, searchWord) => {
     });
 };
 
-searchNewAddress('road','수인로2421번길 89');
-
-/*
 module.exports = {
     searchNewAddress
 };
-*/
+
 
 //
