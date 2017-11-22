@@ -1,5 +1,5 @@
 const sendAPI = require('./send');
-
+const sendAPI = require('../rest-api/openapi');
 
 const handleReceiveMessage = (event) => {
     var senderID = event.sender.id;
@@ -16,7 +16,15 @@ const handleReceiveMessage = (event) => {
 
     if (messageText == 'led'){
       sendAPI.sendLedMessage(senderID);
-      console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+    }else if(messageText.startsWith('searchAddress')){
+      try{
+        var arr = str.split(':')[1].split('=')
+        openAPI.searchNewAddress(arr[0],arr[1])
+
+      }catch (err) {
+        console.log(err)
+      }
+
     }else{
       sendAPI.sendTextMessage(senderID,messageText);
     }
