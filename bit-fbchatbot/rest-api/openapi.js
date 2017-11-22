@@ -3,7 +3,7 @@ const request = require('request');
 const searchNewAddress = (type, searchWord) => {
     var uri = 'http://openapi.epost.go.kr/postal/retrieveNewAdressAreaCdService/retrieveNewAdressAreaCdService/getNewAddressListAreaCd';
     /* Service Key*/
-    var queryString = '?ServiceKey=' + '%2BQaXEtzlm%2F6LA3ciEpdAT4r7ZNfrjupiJcgLvbiTE1%2BKSqwRd4lUUgVKb0H4VUBUXocKu%2F9S%2BPY%2FTD1A5AfxFg%3D%3D';
+    var queryString = '?ServiceKey=' + process.env.OPENAPI_KEY;
 
     /* dong : 동(읍/면)명 road :도로명[default] post : 우편번호 */
     queryString += '&searchSe=' + type;
