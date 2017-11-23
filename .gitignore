@@ -11,5 +11,6 @@
 **/Debug
 **/Release
 **/.env
+**/package-lock.json
 **/.settings/
 !build.gradle
