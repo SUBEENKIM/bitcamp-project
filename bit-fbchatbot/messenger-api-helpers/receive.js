@@ -18,7 +18,7 @@ const handleReceiveMessage = (event) => {
 
     var menu = global[senderID].menu;
 
-    if(mesageText == 'help'){
+    if(messageText == 'help'){
 
       sendAPI.sendMenuMessage(senderID);
 
