@@ -118,7 +118,7 @@ const menuLed = (senderID, payload) => {
 
 const menuCalc = (senderID, messageText) => {
   try{
-    var tokens = messageText.split('');
+    var tokens = messageText.split(' ');
     if(tokens.length != 3)
       throw '형식이 맞지 않습니다.'
     var a = parseInt(tokens[0]);
