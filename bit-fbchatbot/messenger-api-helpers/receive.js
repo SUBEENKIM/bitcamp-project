@@ -14,8 +14,9 @@ const handleReceiveMessage = (event) => {
     var messageText = message.text;
     var messageAttachments = message.attachments;
 
-    if (messageText == 'led'){
-      sendAPI.sendLedMessage(senderID);
+    if (messageText == 'help'){
+      sendAPI.sendMenuMessage(senderID);
+      
     }else if(messageText.startsWith('searchAddress')){
       try{
         var arr = messageText.split(':')[1].split('=')
@@ -27,7 +28,19 @@ const handleReceiveMessage = (event) => {
         console.log(err)
       }
 
-    }else{
+    }/*else if (messageText.startsWith('weather')){
+      try{
+        var arr = messageText.split(':')[1]
+        openAPI.searchNewAddress(arr[0] (msg) => {
+          sendAPI.sendTextMessage(senderID, msg);
+        });
+
+      }catch (err) {
+        console.log(err)
+      }
+
+
+    }*/else{
       sendAPI.sendTextMessage(senderID,messageText);
     }
 

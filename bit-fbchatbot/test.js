@@ -14,9 +14,6 @@ parseString(xml,(err, result) => {
     console.log(currentPage);
     console.log("-----------------------");
 
-
-
-
     var addrList = result.NewAddressListResponse.newAddressListAreaCd;
 
 
