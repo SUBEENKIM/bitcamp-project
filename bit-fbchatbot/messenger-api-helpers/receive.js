@@ -31,18 +31,21 @@ const handleReceiveMessage = (event) => {
 
       menuCalc(senderID, messageText);
 
-    }else if(messageText.startsWith('searchAddress')){
+    }else if (menu.startsWith('addr_')){
       try{
-        var arr = messageText.split(':')[1].split('=')
+        var type = menu.substring(5);
+        var searchWord = messageText;
+
         openAPI.searchNewAddress(arr[0],arr[1], (msg) => {
           sendAPI.sendTextMessage(senderID, msg);
         });
 
       }catch (err) {
-        console.log(err)
+        sendAPI.sendTextMessage('주소 검색을 할 수 없습니다.');
+        console.log(err);
       }
-
-    }/*else if (messageText.startsWith('weather')){
+    }
+    /*else if (messageText.startsWith('weather')){
       try{
         var arr = messageText.split(':')[1]
         openAPI.searchNewAddress(arr[0] (msg) => {
@@ -150,10 +153,13 @@ const menuCalc = (senderID, messageText) => {
 const menuAddr = (senderID, payload) => {
   if(payload == 'addr_dong'){
     sendAPI.sendTextMessage(senderID, '동 이름?');
+    global[senderID].menu = 'addr_dong'
   }else if(payload == 'addr_road'){
     sendAPI.sendTextMessage(senderID, '도로명?');
+    global[senderID].menu = 'addr_road'
   }else if(payload == 'addr_post'){
     sendAPI.sendTextMessage(senderID, '우편번호?');
+    global[senderID].menu = 'addr_post'
   }
 }
 
