@@ -91,7 +91,7 @@ const menuHelp = (senderID, payload) => {
     global[senderID].menu = 'led'; //이 사용자의 현재 메뉴는 'LED 스위치' 이다.
     //console.log('LED 메뉴를 눌렀네요!');
   }else if(payload == 'menu_calc'){
-    sendAPI.sendLedMessage(senderID,'식을 입력하세요.\n 예)2 + 3');
+    sendAPI.sendCalcMessage(senderID,'식을 입력하세요.\n 예)2 + 3');
     global[senderID].menu = 'calc'; // 이 사용자의 현재 메뉴는 '계산기' 이다.
     //console.log('계산기 메뉴를 눌렀네요!');
   }else if(payload == 'menu_addr'){
@@ -115,9 +115,12 @@ const menuLed = (senderID, payload) => {
 const menuCalc = (senderID, messageText) => {
   try{
     var tokens = messageText.split('');
+    if(tokens.length != 3)
+      throw '형식이 맞지 않습니다.'
     var a = parseInt(tokens[0]);
     var op = tokens[1];
     var b = parseInt(tokens[2]);
+    var result = 0;
 
     switch (op) {
       case '+': result = a + b; break;
