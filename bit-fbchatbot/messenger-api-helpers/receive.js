@@ -99,8 +99,8 @@ const menuHelp = (senderID, payload) => {
     global[senderID].menu = 'calc'; // 이 사용자의 현재 메뉴는 '계산기' 이다.
     //console.log('계산기 메뉴를 눌렀네요!');
   }else if(payload == 'menu_addr'){
-    sendAPI.sendLedMessage(senderID);
-    global[senderID].menu = 'led_switch';
+    sendAPI.sendAddressSearchMessage(senderID);
+    global[senderID].menu = 'addr'; // 이 사용자의 현재 메뉴는 '주소검색' 이다.
     //console.log('주소검색 메뉴를 눌렀네요!');
 
   }
