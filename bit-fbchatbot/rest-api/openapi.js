@@ -25,8 +25,8 @@ const searchNewAddress = (type, searchWord, callback) => {
         //console.log('=> Status', response.statusCode);
         //console.log('=> Headers', JSON.stringify(response.headers));
         console.log('=> Reponse received', body);
-        try{
         parseString(body,(err, result) => {
+          try{
             var headers = result.NewAddressListResponse.cmmMsgHeader[0];
             var totalCount = headers.totalCount[0];
             var countPerPage = headers.countPerPage[0];
@@ -50,7 +50,7 @@ const searchNewAddress = (type, searchWord, callback) => {
             }
             callback(message)
           }catch(err){
-              callback(message)
+              callback('주소 검색을 할 수 없습니다.')
           }
 
         });
