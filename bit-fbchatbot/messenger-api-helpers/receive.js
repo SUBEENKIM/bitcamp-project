@@ -18,14 +18,14 @@ const handleReceiveMessage = (event) => {
 
     var menu = global[senderID].menu;
 
-    if(menu == 'help'){
+    if(mesageText == 'help'){
 
       sendAPI.sendMenuMessage(senderID);
 
       // 현재 help를 출력한 상태임을 저장한다.
       global[senderID].menu = 'help';
 
-    }else if (messageText == 'calc'){
+    }else if (menu == 'calc'){
       // 현재 계산기 메뉴일 때는 사용자가 입력한 값이
       // 계산식이라고 가정하고 메시지를 분석한다.
 
