@@ -18,16 +18,18 @@ const handleReceiveMessage = (event) => {
 
     var menu = global[senderID].menu;
 
-    if(menu == 'calc'){
-      // 현재 계산기 메뉴일 때는 사용자가 입력한 값이
-      // 계산식이라고 가정하고 메시지를 분석한다.
-      menuCalc(senderID, messageText);
+    if(menu == 'help'){
 
-    }else if (messageText == 'help'){
       sendAPI.sendMenuMessage(senderID);
 
       // 현재 help를 출력한 상태임을 저장한다.
       global[senderID].menu = 'help';
+
+    }else if (messageText == 'calc'){
+      // 현재 계산기 메뉴일 때는 사용자가 입력한 값이
+      // 계산식이라고 가정하고 메시지를 분석한다.
+
+      menuCalc(senderID, messageText);
 
     }else if(messageText.startsWith('searchAddress')){
       try{
@@ -73,6 +75,8 @@ const handleReceivePostback = (event) => {
       menuHelp(senderID, payload);
     }else if(menu == 'led'){
       menuLed(senderID, payload);
+    }else if(menu == 'calc'){
+      menuCalc(senderID, payload);
     }
 
     /*
@@ -91,7 +95,7 @@ const menuHelp = (senderID, payload) => {
     global[senderID].menu = 'led'; //이 사용자의 현재 메뉴는 'LED 스위치' 이다.
     //console.log('LED 메뉴를 눌렀네요!');
   }else if(payload == 'menu_calc'){
-    sendAPI.sendCalcMessage(senderID,'식을 입력하세요.\n 예)2 + 3');
+    sendAPI.sendTextMessage(senderID,'식을 입력하세요.\n 예)2 + 3');
     global[senderID].menu = 'calc'; // 이 사용자의 현재 메뉴는 '계산기' 이다.
     //console.log('계산기 메뉴를 눌렀네요!');
   }else if(payload == 'menu_addr'){
