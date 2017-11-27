@@ -149,11 +149,11 @@ const menuCalc = (senderID, messageText) => {
 
 const menuAddr = (senderID, payload) => {
   if(payload == 'addr_dong'){
-    sendAPI.sendTextMessage(sender, '동 이름?');
+    sendAPI.sendTextMessage(senderID, '동 이름?');
   }else if(payload == 'addr_road'){
-    sendAPI.sendTextMessage(sender, '도로명?');
+    sendAPI.sendTextMessage(senderID, '도로명?');
   }else if(payload == 'addr_post'){
-    sendAPI.sendTextMessage(sender, '우편번호?');
+    sendAPI.sendTextMessage(senderID, '우편번호?');
   }
 }
 
