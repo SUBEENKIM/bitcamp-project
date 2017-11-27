@@ -216,6 +216,7 @@ const sendGenericMessage = (recipientId) => {
 
 
 module.exports = {
+  sendMenuMessage,
   sendTextMessage,
   sendImageMessage,
   sendButton1Message,
