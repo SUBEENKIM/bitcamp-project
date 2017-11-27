@@ -36,7 +36,7 @@ const handleReceiveMessage = (event) => {
         var type = menu.substring(5);
         var searchWord = messageText;
 
-        openAPI.searchNewAddress(arr[0],arr[1], (msg) => {
+        openAPI.searchNewAddress(type,searchWord, (msg) => {
           sendAPI.sendTextMessage(senderID, msg);
         });
 
@@ -80,7 +80,7 @@ const handleReceivePostback = (event) => {
       menuLed(senderID, payload);
     }else if(menu == 'calc'){
       menuCalc(senderID, payload);
-    }else if(menu == 'addr'){
+    }else if(menu.startsWith('addr')){
       menuAddr(senderID, payload);
     }
 

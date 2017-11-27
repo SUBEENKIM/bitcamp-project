@@ -25,6 +25,7 @@ const searchNewAddress = (type, searchWord, callback) => {
         //console.log('=> Status', response.statusCode);
         //console.log('=> Headers', JSON.stringify(response.headers));
         console.log('=> Reponse received', body);
+        try{
         parseString(body,(err, result) => {
             var headers = result.NewAddressListResponse.cmmMsgHeader[0];
             var totalCount = headers.totalCount[0];
@@ -48,6 +49,9 @@ const searchNewAddress = (type, searchWord, callback) => {
 
             }
             callback(message)
+          }catch(err){
+              callback(message)
+          }
 
         });
     });
