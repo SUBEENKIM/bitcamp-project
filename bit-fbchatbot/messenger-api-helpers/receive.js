@@ -77,6 +77,8 @@ const handleReceivePostback = (event) => {
       menuLed(senderID, payload);
     }else if(menu == 'calc'){
       menuCalc(senderID, payload);
+    }else if(menu == 'addr'){
+      menuAddr(senderID, payload);
     }
 
     /*
@@ -143,6 +145,16 @@ const menuCalc = (senderID, messageText) => {
     sendAPI.sendTextMessage(senderID, '계산식 형식이 옳지 않습니다. \n예) a + b')
   }
 
+}
+
+const menuAddr = (senderID, payload) => {
+  if(payload == 'addr_dong'){
+    sendAPI.sendTextMessage(sender, '동 이름?');
+  }else if(payload == 'addr_road'){
+    sendAPI.sendTextMessage(sender, '도로명?');
+  }else if(payload == 'addr_post'){
+    sendAPI.sendTextMessage(sender, '우편번호?');
+  }
 }
 
 module.exports = {
