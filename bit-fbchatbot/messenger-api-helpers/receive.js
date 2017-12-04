@@ -3,7 +3,7 @@ const openAPI = require('../rest-api/openapi');
 
 const handleReceiveMessage = (event) => {
     var senderID = event.sender.id;
-    var recipientID = event.recipient.id;
+    var recipientID = event.recipient.id; 
     var timeOfMessage = event.timestamp;
     var message = event.message;
 
