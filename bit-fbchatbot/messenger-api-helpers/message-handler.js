@@ -16,7 +16,7 @@ const getHandler = (message) => {
 };
 
 addMessage('help', (recipientId) => {
-  var messageData: {
+  var messageData= {
     recipient: {
       id: recipientId
     },
