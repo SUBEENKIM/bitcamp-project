@@ -93,6 +93,6 @@ addMessage('/addr/road', (recipientId, messageText) => {
     }
 });
 
-module.export = {
+module.exports = {
   getHandler
 };

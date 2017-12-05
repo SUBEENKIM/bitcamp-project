@@ -101,6 +101,6 @@ addPostback('/calc', (recipientId) => {
   sendAPI.sendTextMessage(recipientId, '식을 입력하세요.\n 예) a + b');
 });
 
-module.export = {
+module.exports = {
   getHandler
 };
