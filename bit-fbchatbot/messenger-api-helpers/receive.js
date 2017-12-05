@@ -1,6 +1,6 @@
 const sendAPI = require('./send');
 const openAPI = require('../rest-api/openapi');
-const messageHandler = require('./message=handler');
+const messageHandler = require('./message-handler');
 const postbackHandler = require('./postback-handler');
 
 const handleReceiveMessage = (event) => {
