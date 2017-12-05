@@ -20,6 +20,8 @@ const handleReceiveMessage = (event) => {
 
     var menu = global[senderID].menu;
 
+    var handler = messageHandler.getHandler(messageText);
+
     if(handler){
       handler(senderID);
     }else if (menu){
