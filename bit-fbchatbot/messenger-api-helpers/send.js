@@ -1,79 +1,4 @@
-
-
 const api = require('./api')
-
-const sendMenuMessage = (recipientId) => {
-    var messageData = {
-      recipient: {
-        id: recipientId
-      },
-      message: {
-        "attachment":{
-          "type":"template",
-          "payload":{
-            "template_type":"button",
-            "text":"메뉴",
-            "buttons":[
-              {
-                "type":"postback",
-                "title":"LED",
-                "payload":"menu_led"
-              },
-              {
-                "type":"postback",
-                "title":"계산기",
-                "payload":"menu_calc"
-              },
-              {
-                "type":"postback",
-                "title":"주소검색",
-                "payload":"menu_addr"
-              }
-            ]
-          }
-        }
-      }
-    };
-
-    api.callMessagesAPI(messageData);
-};
-
-
-const sendAddressSearchMessage = (recipientId) => {
-    var messageData = {
-      recipient: {
-        id: recipientId
-      },
-      message: {
-        "attachment":{
-          "type":"template",
-          "payload":{
-            "template_type":"button",
-            "text":"검색 항목",
-            "buttons":[
-              {
-                "type":"postback",
-                "title":"동이름",
-                "payload":"addr_dong"
-              },
-              {
-                "type":"postback",
-                "title":"도로명",
-                "payload":"addr_road"
-              },
-              {
-                "type":"postback",
-                "title":"우편 번호",
-                "payload":"addr_post"
-              }
-            ]
-          }
-        }
-      }
-    };
-
-    api.callMessagesAPI(messageData);
-};
 
 const sendTextMessage = (recipientId, messageText) => {
     var messageData = {
@@ -117,7 +42,7 @@ const sendButton1Message = (recipientId) => {
           "type":"template",
           "payload":{
             "template_type":"button",
-            "text":"What do you want to do next?",
+            "text":"검색 사이트를 선택하세요!",
             "buttons":[
               {
                 "type":"web_url",
@@ -143,37 +68,6 @@ const sendButton1Message = (recipientId) => {
     api.callMessagesAPI(messageData);
 };
 
-const sendLedMessage = (recipientId) => {
-    var messageData = {
-      recipient: {
-        id: recipientId
-      },
-      message: {
-        "attachment":{
-          "type":"template",
-          "payload":{
-            "template_type":"button",
-            "text":"LED 동작 제어",
-            "buttons":[
-              {
-                "type":"postback",
-                "title":"ON",
-                "payload":"led_on"
-              },
-              {
-                "type":"postback",
-                "title":"OFF",
-                "payload":"led_off"
-              }
-            ]
-          }
-        }
-      }
-    };
-
-    api.callMessagesAPI(messageData);
-};
-
 const sendButton2Message = (recipientId) => {
     var messageData = {
       recipient: {
@@ -184,11 +78,11 @@ const sendButton2Message = (recipientId) => {
           "type":"template",
           "payload":{
             "template_type":"button",
-            "text":"What do you want to do next?",
+            "text":"전화걸기",
             "buttons":[
               {
                 "type":"phone_number",
-                "title":"Call Representative",
+                "title":"내 전화번호",
                 "payload":"+821036749313"
               }
             ]
@@ -252,13 +146,11 @@ const sendGenericMessage = (recipientId) => {
 
 
 module.exports = {
-  sendMenuMessage,
+
   sendTextMessage,
   sendImageMessage,
   sendButton1Message,
   sendButton2Message,
-  sendLedMessage,
-  sendAddressSearchMessage,
   sendGenericMessage
 
 };
