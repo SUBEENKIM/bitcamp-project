@@ -14,12 +14,16 @@ const callMessagesAPI = (messageData) => {
         var recipientId = body.recipient_id;
         var messageId = body.message_id;
 
-        console.log("Successfully sent generic message with id %s to recipient %s",
+        if(messageId){
+          console.log("Successfully sent generic message with id %s to recipient %s",
           messageId, recipientId);
+
+        }else{
+          console.log("Successfully called Send API for recipient %s", recipientId);
+        }
+
       } else {
-        console.error("Unable to send message.");
-        //console.error(response);
-        console.error(error);
+        console.error("Failed calling Send API");
       }
     });
 };

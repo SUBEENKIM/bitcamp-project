@@ -11,7 +11,7 @@ const getHandler = (postback) => {
   return postbackHandler[postback];
 };
 
-addPostback('./led', (recipientId) => {
+addPostback('/led', (recipientId) => {
   var messageData = {
     recipient: {
       id: recipientId
