@@ -14,7 +14,6 @@
   </resultMap>
   
   <select id="selectListByType" resultMap="deviceMap" parameterType="map">
-    <include refid="select1"/> 
     	select d.dno, d.sn, d.dev_type, d.status, u.uno
 		from iot_device d left outer join iot_user u on d.uno = u.uno
 		where u.fbuid = #{fbUserId} and d.dev_type = #{deviceType};
