@@ -24,6 +24,7 @@ const handleReceiveMessage = (event) => {
     if(handler){
       handler(senderID);
     }else if (menu){
+      console.log('==============> ' + menu + ' '+ messageText);
       handler = messageHandler.getHandler(menu);
       handler(senderID, messageText);
     }else{
