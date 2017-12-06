@@ -78,7 +78,6 @@ addPostback('/addr', (recipientId) => {
             }
           ]
         }
-
       }
     }
   };
@@ -90,11 +89,11 @@ addPostback('/addr/dong', (recipientId) => {
 });
 
 addPostback('/addr/road', (recipientId) => {
-  sendAPI.sendTextMessage(recipientId, '동이름?');
+  sendAPI.sendTextMessage(recipientId, '도로명?');
 });
 
 addPostback('/addr/post', (recipientId) => {
-  sendAPI.sendTextMessage(recipientId, '동이름?');
+  sendAPI.sendTextMessage(recipientId, '우편번호?');
 });
 
 addPostback('/calc', (recipientId) => {

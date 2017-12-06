@@ -16,9 +16,8 @@ const handleReceiveMessage = (event) => {
     var messageText = message.text;
     var messageAttachments = message.attachments;
 
-    //console.log('user ============>', global[senderID].user)
-
     var menu = global[senderID].menu;
+
 
     var handler = messageHandler.getHandler(messageText);
 
@@ -26,7 +25,7 @@ const handleReceiveMessage = (event) => {
       handler(senderID);
     }else if (menu){
       handler = messageHandler.getHandler(menu);
-      handler(senderID, menu);
+      handler(senderID, messageText);
     }else{
       sendAPI.sendTextMessage(senderID, '유효한 명령이 아닙니다.')
     }
