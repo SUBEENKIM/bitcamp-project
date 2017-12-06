@@ -25,7 +25,7 @@ const handleReceiveMessage = (event) => {
       handler(senderID);
     }else if (menu){
       handler = messageHandler.getHandler(menu);
-      handler(senderID);
+      handler(senderID, messageText);
     }else{
       sendAPI.sendTextMessage(senderID, '유효한 명령이 아닙니다.')
     }
