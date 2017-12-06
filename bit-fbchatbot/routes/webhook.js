@@ -89,10 +89,12 @@ router.post('/', (req, res) => {
       }); //entry.messaging.forEach()
 
     }); //data.entry.forEach()
-    res.sendStatus(200);
-  } else{
-    res.sendStatus(404);
-  }
+
+  } // if(data.object === 'page')
+
+    //res.sendStatus(200);
+
+
 }); // router.post('/' ...)
 
 module.exports = router;
