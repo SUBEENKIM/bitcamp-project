@@ -9,8 +9,8 @@ const sendTextMessage = (recipientId, messageText) => {
         text: messageText
       }
     };
-
     api.callMessagesAPI(messageData);
+    console.log('Test =======>'+ messageText);
 };
 
 const sendImageMessage = (recipientId) => {
