@@ -74,7 +74,7 @@ addMessage('/calc', (recipientId, messageText) => {
 
       }
       sendAPI.sendTextMessage(recipientId,
-        '계산 결과는 ' + ' 입니다.')
+        '계산 결과는 ' + result + ' 입니다.')
 
 
   } catch(exception){
