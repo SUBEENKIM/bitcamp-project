@@ -50,6 +50,31 @@ addMessage('help', (recipientId) => {
   api.callMessagesAPI(messageData);
 });
 
+addMessage('login', (recipientId) => {
+  var messageData= {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      "attachment":{
+        "type":"template",
+        "payload":{
+          "template_type":"button",
+          "text":"로그인",
+          "buttons":[
+            {
+              "type":"web_url",
+              "url":"https://www.subeenk.xyz:8080/routes/users",
+              "title":"로그인"
+            }
+          ]
+        }
+      }
+    }
+  };
+  api.callMessagesAPI(messageData);
+});
+
 addMessage('/calc', (recipientId, messageText) => {
   try{
     var tokens = messageText.split(' ');

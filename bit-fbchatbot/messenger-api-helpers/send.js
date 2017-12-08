@@ -94,7 +94,6 @@ const sendButton2Message = (recipientId) => {
     api.callMessagesAPI(messageData);
 };
 
-
 const sendGenericMessage = (recipientId) => {
     var messageData = {
       recipient: {
