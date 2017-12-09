@@ -3,18 +3,18 @@
 // 만약 Express 모듈을 사용하지 않는다면 다음 코드는 무효하다.
 //import express from 'express';
 const express = require('express')
+const fs = require('fs');
 
 // 클라이언트 요청이 들어왔을 때 함수를 호출해주는 객체
 const router = express.Router();
 
 // 라우터 객체에 URL에 대해 호출될 함수를 등록한다.
 router.get('/', (request, response) => {
-    response.writeHead(200, {
-        'Content-Type': 'text/plain;charset=UTF-8'
-    })
-    response.write('hello.....\n')
-    response.end()
-})
+    fs.readFile('login.html', function(error,data){
+      res.writeHead(200, {'Content-Type':'text/html'});
+      res.end(data);
+    });
+});
 
 router.get('/test1', (request, response) => {
     response.writeHead(200, {
