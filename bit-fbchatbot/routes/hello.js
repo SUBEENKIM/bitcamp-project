@@ -14,6 +14,7 @@ router.get('/', (request, response) => {
     })
     response.write('hello.....\n')
     response.end()
+    console.log('ㅎㅇㅎㅇ');
 })
 
 router.get('/test1', (request, response) => {
