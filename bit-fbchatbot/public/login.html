@@ -185,7 +185,8 @@
                                                     // Full docs on the response object can be found in the documentation
                                                     // for FB.getLoginStatus().
                                                     if (response.status === 'connected') {
-                                                        window.location.href = "http://www.bangyeonju.xyz/mainform.html";
+                                                        //window.location.href = "http://www.bangyeonju.xyz/mainform.html";
+                                                        console.log(페북연결 성공);
 
 
                                                     } else if (response.status === 'not_authorized') {
@@ -247,6 +248,7 @@
                                                             scope: 'email,public_profile',
                                                             return_scopes: true
                                                         });
+                                                        console.log(scope.email);
                                                 }, false);
                                             </script>
                                             <class="ifacebook" title="Facebook">
