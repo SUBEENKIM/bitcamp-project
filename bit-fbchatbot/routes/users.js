@@ -12,8 +12,8 @@ const router = express.Router();
 // 라우터 객체에 URL에 대해 호출될 함수를 등록한다.
 router.get('/', (request, response) => {
     fs.readFile('login.html', function(error,data){
-      res.writeHead(200, {'Content-Type':'text/html'});
-      res.end(data);
+      response.writeHead(200, {'Content-Type':'text/html'});
+      response.end(data);
     });
 });
 
