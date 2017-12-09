@@ -37,7 +37,7 @@ app.use('/', require('./routes/root'));
 app.use('/webhook', require('./routes/webhook'));
 app.use('/hello', require('./routes/hello'));
 app.use('/users', require('./routes/users'));
-app.use('/users', require('./routes/login.html'));
+
 // 인증서 데이터를 로딩
 // => 이 객체는 node HTTPS 서버를 실행할 때 사용한다.
 var options = {
