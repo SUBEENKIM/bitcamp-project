@@ -36,6 +36,7 @@ app.use(express.static('public'))
 app.use('/', require('./routes/root'));
 app.use('/webhook', require('./routes/webhook'));
 app.use('/hello', require('./routes/hello'));
+app.use('/users', require('./routes/users'));
 
 
 // 인증서 데이터를 로딩
