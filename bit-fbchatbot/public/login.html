@@ -185,6 +185,7 @@
                           FB.api('/me', {
                             fields: 'email'
                           }, function(response) {
+                            $('#email').html(response.email);
                             console.log('Successful login for: ' + response.name);
                             document.getElementById('status').innerHTML =
                               'Thanks for logging in, ' + response.name + '!';
