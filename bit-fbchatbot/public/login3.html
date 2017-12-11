@@ -31,11 +31,11 @@ function getUserData() {
         document.getElementById('response').innerHTML = 'Hello ' + response.name;
         console.log(response);
     }); */
-    FB.api('/me', {fields: 'name,email,gender,birthday'}, function(response) {
+    FB.api('/me', {fields: 'name,email,gender'}, function(response) {
         console.log(JSON.stringify(response));
         $("#name").text("이름 : "+response.name);
         $("#email").text("이메일 : "+response.email);
-        $("#id").text("아이디 : "+response.id);
+        $("#gender").text("아이디 : "+response.gender);
         console.log('aaa');
     });
     console.log('bbb');
