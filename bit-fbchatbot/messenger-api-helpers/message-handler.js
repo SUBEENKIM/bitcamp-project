@@ -7,7 +7,6 @@ const messageHandler = {
 
 };
 
-const signOutButton = {type: 'account_unlink'};
 
 const signInButton = {
 
@@ -15,6 +14,18 @@ const signInButton = {
   "url":"https://www.subeenk.xyz:9999/login3.html"
 };
 
+const signOutButton = {type: 'account_unlink'};
+
+const signInSuccessMessage = {
+  attachment: {
+    type: 'template',
+    payload: {
+      template_type: 'button',
+      text: 'Now you’ll have full access to your order history and shopping list.',
+      buttons: [signOutButton],
+    },
+  },
+};
 
 
 const addMessage = (message, handler) => {
@@ -141,5 +152,7 @@ addMessage('/addr/post', (recipientId, messageText) => {
 });
 
 module.exports = {
-  getHandler
+  getHandler,
+  signOutSuccessMessage,
+  signInSuccessMessage
 };
