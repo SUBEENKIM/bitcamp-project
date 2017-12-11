@@ -66,7 +66,7 @@ addMessage('login', (recipientId) => {
               "type":"web_url",
               "url":"https://www.subeenk.xyz:9999/login3.html",
               "title":"로그인",
-              "payload":"/login"
+              "payload":"/log"
             }
           ]
         }
