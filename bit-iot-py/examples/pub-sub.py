@@ -8,9 +8,11 @@ import json
 def customCallback(client, userdata, message):
     print("메시지를 수신하였습니다. \n")
     print("사서함 이름: ")
-    print(message.topic + "\n")
+    print(message.topic)
+    print("\n")
     print("메시지 내용: ")
-    print(message.payload + "\n")
+    print(message.payload)
+    print("\n")
     print("--------------\n")
 
 host = "a1jawjb5359l39.iot.ap-northeast-2.amazonaws.com"
