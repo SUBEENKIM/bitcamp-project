@@ -19,7 +19,7 @@ certificatePath = "../dev01.cert.pem"
 privateKeyPath = "../dev01.private.key"
 useWebsocket = False
 clientId = "client2"
-topic = topic_1
+topic = "topic_1"
 
 # 실행하면서 로그를 남기기 위한 설정
 logger = logging.getLogger("AWSIoTPythonSDK.core")
