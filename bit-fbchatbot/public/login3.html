@@ -35,8 +35,6 @@ function getUserData() {
         console.log(JSON.stringify(response));
         $("#name").text("이름 : "+response.name);
         $("#email").text("이메일 : "+response.email);
-        $("#gender").text("성별 : "+response.gender);
-        $("#birthday").text("생년월일 : "+response.birthday);
         $("#id").text("아이디 : "+response.id);
         console.log('aaa');
     });
