@@ -5,9 +5,16 @@
     - python --version
     - python3 --version
 
+- python ssl 버전 확인
+    - python
+      - import ssl
+      - ssl.OPENSSL_VERSION
+  - python3 ssl 버전 확인
+    - python3
+      - import ssl
+      - ssl.OPENSSL_VERSION
+- AWS IoT 파이썬 모듈 설치
   - python
-    - import ssl
-    - ssl.OPENSSL_VERSION
+    - pip install AWSIoTPythonSDK
   - python3
-    - import ssl
-    - ssl.OPENSSL_VERSION
+      - pip3 install AWSIoTPythonSDK
