@@ -84,6 +84,7 @@ addMessage('help', (recipientId) => {
 });
 
 addMessage('login', (recipientId) => {
+  console.log(signInButton);
   var messageData= {
     recipient: {
       id: recipientId
