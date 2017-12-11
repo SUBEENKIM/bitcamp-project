@@ -65,7 +65,8 @@ addMessage('login', (recipientId) => {
             {
               "type":"web_url",
               "url":"https://www.subeenk.xyz:9999/login.jade",
-              "title":"로그인"
+              "title":"로그인",
+              "payload":"/login"
             }
           ]
         }

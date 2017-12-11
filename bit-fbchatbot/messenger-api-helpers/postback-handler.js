@@ -49,6 +49,10 @@ addPostback('/led/off', (recipientId) => {
   sendAPI.sendTextMessage(recipientId, 'LED를 끕니다.')
 });
 
+addPostback('/login', (recipientId) => {
+  sendAPI.sendTextMessage(recipientId, 'login연동하기!!')
+});
+
 addPostback('/addr', (recipientId) => {
   var messageData = {
     recipient: {
