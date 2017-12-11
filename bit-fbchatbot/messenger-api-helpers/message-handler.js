@@ -7,6 +7,16 @@ const messageHandler = {
 
 };
 
+const signOutButton = {type: 'account_unlink'};
+
+const signInButton = {
+
+  type: 'account_link',
+  "url":"https://www.subeenk.xyz:9999/login3.html"
+};
+
+
+
 const addMessage = (message, handler) => {
   messageHandler[message] = handler;
 }
@@ -61,13 +71,7 @@ addMessage('login', (recipientId) => {
         "payload":{
           "template_type":"button",
           "text":"로그인",
-          "buttons":[
-            {
-              "type":"web_url",
-              "url":"https://www.subeenk.xyz:9999/login3.html",
-              "title":"로그인"
-            }
-          ]
+          "buttons":[signInButton]
         }
       }
     }
