@@ -11,8 +11,8 @@ const messageHandler = {
 const signInButton = {
 
   type: 'account_link',
-  "url":"https://www.subeenk.xyz:9999/login-complete"
-  //"url":"https://www.subeenk.xyz:9999/login3.html"
+  //"url":"https://www.subeenk.xyz:9999/login-complete"
+  "url":"https://www.subeenk.xyz:9999/login3.html"
 };
 
 const signOutButton = {type: 'account_unlink'};
