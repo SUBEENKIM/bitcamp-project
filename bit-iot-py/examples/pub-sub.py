@@ -14,9 +14,9 @@ def customCallback(client, userdata, message):
     print("--------------\n")
 
 host = "a1jawjb5359l39.iot.ap-northeast-2.amazonaws.com"
-rootCAPath = "root-CA.crt"
-certificatePath = "dev01.cert.pem"
-privateKeyPath = "dev01.private.key"
+rootCAPath = "../root-CA.crt"
+certificatePath = "../dev01.cert.pem"
+privateKeyPath = "../dev01.private.key"
 useWebsocket = False
 clientId = "client2"
 topic = topic_1
