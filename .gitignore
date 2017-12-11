@@ -13,7 +13,7 @@
 **/.env
 **/package-lock.json
 **/.settings/
-!*.key
-!*.pem
-!*.crt
+*.key
+*.pem
+*.crt
 !build.gradle
