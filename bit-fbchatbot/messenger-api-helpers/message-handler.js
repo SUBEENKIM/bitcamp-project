@@ -64,7 +64,7 @@ addMessage('login', (recipientId) => {
           "buttons":[
             {
               "type":"web_url",
-              "url":"https://www.subeenk.xyz:9999/login2.html",
+              "url":"https://www.subeenk.xyz:9999/login.jade",
               "title":"로그인"
             }
           ]
