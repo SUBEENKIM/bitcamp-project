@@ -27,6 +27,17 @@ const signInSuccessMessage = {
   },
 };
 
+const signOutSuccessMessage = {
+  attachment: {
+    type: 'template',
+    payload: {
+      template_type: 'button',
+      text: 'You’ve been logged out of your Jasper’s account.',
+      buttons: [signInButton],
+    },
+  },
+};
+
 
 const addMessage = (message, handler) => {
   messageHandler[message] = handler;
