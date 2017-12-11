@@ -36,7 +36,7 @@ app.use(express.static('public'))
 app.use('/', require('./routes/root'));
 app.use('/webhook', require('./routes/webhook'));
 app.use('/hello', require('./routes/hello'));
-app.use('/users', require('./routes/users'));
+app.use('/user', require('./routes/user'));
 
 //jade
 

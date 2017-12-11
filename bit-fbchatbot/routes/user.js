@@ -9,6 +9,10 @@ const fs = require('fs');
 // 클라이언트 요청이 들어왔을 때 함수를 호출해주는 객체
 const router = express.Router();
 
+router.get('/login-complete', (request, response) => {
+    console.log('okok')
+});
+
 // 라우터 객체에 URL에 대해 호출될 함수를 등록한다.
 router.get('/', (request, response) => {
     fs.readFile('login.html', function(error,data){
