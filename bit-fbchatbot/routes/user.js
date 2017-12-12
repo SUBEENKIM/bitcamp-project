@@ -46,6 +46,7 @@ router.get('/login', function(req, res) {
   const redirectURI = req.query.redirect_uri;
 
   res.render('login', {accountLinkingToken, redirectURI});
+  console.log('xxxxxxxxxxxxxxxx');
 });
 
 router.get('/', (request, response) => {
