@@ -18,7 +18,7 @@ def customCallback(client, userdata, message):
     ledState = dict['led']
     if ledState == "on":
         led.onLed(True)
-    else
+    else:
         led.onLed(False)
     print("--------------")
 
