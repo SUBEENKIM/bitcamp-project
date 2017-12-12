@@ -7,13 +7,13 @@ var awsIot = require('aws-iot-device-sdk');
 var device = awsIot.device({
 
   //AWS 서버에 Thing을 생성한 후 만든 인증서의 개인키 파일
-    keyPath:"dev01.private.key",
+    keyPath:"../dev01.private.key",
 
   //AWS 서버에 Thing을 생성한 후 만든 인증서의 사물 인증서 파일
-    certPath:"dev01.cert.pem",
+    certPath:"../dev01.cert.pem",
 
   //AWS 서버에 Thing을 생성한 후 만든 인증서를 검증해 줄 "인증서를 발행한 회사"의 인증서 파일
-    caPath:"root-CA.crt",
+    caPath:"../root-CA.crt",
 
   // 다른 클라ㅏ이언트와 구분하기 위한 임의의 ID
     clientId:"client1",
