@@ -9,7 +9,7 @@ const fs = require('fs');
 // 클라이언트 요청이 들어왔을 때 함수를 호출해주는 객체
 const router = express.Router();
 
-router.get('/login-complete', (request, response) => {
+router.get('/user', (request, response) => {
     console.log('okok')
 });
 
