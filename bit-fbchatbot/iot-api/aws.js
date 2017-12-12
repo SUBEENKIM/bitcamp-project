@@ -34,7 +34,7 @@ dev01.on('connect', function() {
     devices['dev01'] = dev01;
 });
 
-function publish(deviceName, topic, data){
+function publish(deviceName, topic, dataObj){
     devices[deviceName].publish(topic, JSON.stringify(dataObj));
 
 }
