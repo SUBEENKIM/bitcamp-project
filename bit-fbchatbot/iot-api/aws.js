@@ -24,7 +24,7 @@ const dev01 = awsIot.device({
   // AWS에 등록한 Thing을 가리키는 URL.
   // AWS IoT 사물 관리 페이지에서 "상호작용" 메뉴에서
   //HTTPS의 RestAPI를 요청할 때 사용할 Thing의 URL이다.
-    host:"a1jawjb5359l39.iot.ap-northeast-2.amazonaws.com" // AWS
+    host: process.env.DEV01_HOST // AWS
 
 });
 
