@@ -49,7 +49,7 @@ addMessage("help", (recipientId) => {
   };
   api.callMessagesAPI(messageData);
 })
-// 현재 계산기 메뉴일 때, 사용자가 입력한 값을 처리하는 함수 등록 
+// 현재 계산기 메뉴일 때, 사용자가 입력한 값을 처리하는 함수 등록
 addMessage('/calc', (recipientId, messageText) => {
   // 계산식을 분석한다.
   try {
@@ -68,18 +68,18 @@ addMessage('/calc', (recipientId, messageText) => {
       case '/': result = a / b; break;
       case '%': result = a % b; break;
       default:
-          sendAPI.sendTextMessage(recipientId, 
+          sendAPI.sendTextMessage(recipientId,
               '+, -, *, /, % 연산자만 사용할 수 있습니다.')
           return;
       }
-      sendAPI.sendTextMessage(recipientId, 
+      sendAPI.sendTextMessage(recipientId,
           '계산 결과는 ' + result + ' 입니다.')
   } catch (exception) {
-      sendAPI.sendTextMessage(recipientId, 
+      sendAPI.sendTextMessage(recipientId,
           '계산식이 옳지 않습니다.\n예)값1 연산자 값2')
   }
 });
-// 현재 주소검색 메뉴일 때, 사용자가 선택한 검색항목(동)을 처리하는 함수 등록 
+// 현재 주소검색 메뉴일 때, 사용자가 선택한 검색항목(동)을 처리하는 함수 등록
 addMessage('/addr/dong', (recipientId, messageText) => {
   try {
       openAPI.searchNewAddress('dong', messageText, (msg) => {
@@ -89,7 +89,7 @@ addMessage('/addr/dong', (recipientId, messageText) => {
       console.log(err);
   }
 });
-// 현재 주소검색 메뉴일 때, 사용자가 선택한 검색항목(도로명)을 처리하는 함수 등록 
+// 현재 주소검색 메뉴일 때, 사용자가 선택한 검색항목(도로명)을 처리하는 함수 등록
 addMessage('/addr/road', (recipientId, messageText) => {
   try {
       openAPI.searchNewAddress('road', messageText, (msg) => {
@@ -99,7 +99,7 @@ addMessage('/addr/road', (recipientId, messageText) => {
       console.log(err);
   }
 });
-// 현재 주소검색 메뉴일 때, 사용자가 선택한 검색항목(우편번호)을 처리하는 함수 등록 
+// 현재 주소검색 메뉴일 때, 사용자가 선택한 검색항목(우편번호)을 처리하는 함수 등록
 addMessage('/addr/post', (recipientId, messageText) => {
   try {
       openAPI.searchNewAddress('post', messageText, (msg) => {
@@ -114,7 +114,7 @@ const UserStore = require("../stores/user_store")
 addMessage('user profile', (recipientId, messageText) => {
   const userProfile = UserStore.getByMessengerId(recipientId);
   request({
-    uri: "https://graph.facebook.com/v2.6/" + userProfile.messengerId + "?fields=first_name,last_name,profile_pic&access_token=" + process.env.PAGE_ACCESS_TOKEN ,
+    uri: "https://graph.facebook.com/v2.6/" + userProfile.messengerId + "?fields=first_name,last_name,profile_pic&access_token,email=" + process.env.PAGE_ACCESS_TOKEN ,
     method: 'GET'
   }, function (error, response, body) {
     console.log('====> Status', response.statusCode);
