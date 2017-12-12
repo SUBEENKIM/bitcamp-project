@@ -41,12 +41,11 @@ router.get('/login', function(req, res) {
     for a user. Read More at:
     https://developers.facebook.com/docs/messenger-platform/account-linking
   */
-  // const accountLinkingToken = req.query.account_linking_token;
-  //
-  // const redirectURI = req.query.redirect_uri;
-  //
-  // res.render('login', {accountLinkingToken, redirectURI});
-  console.log(okok);
+  const accountLinkingToken = req.query.account_linking_token;
+
+  const redirectURI = req.query.redirect_uri;
+
+  res.render('login', {accountLinkingToken, redirectURI});
 });
 
 router.get('/', (request, response) => {
@@ -58,6 +57,7 @@ router.get('/', (request, response) => {
     fs.readFile('login.html', function(error,data){
       response.writeHead(200, {'Content-Type':'text/html'});
       response.end(data);
+      console.log('user');
     });
 });
 
