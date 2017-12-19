@@ -20,8 +20,13 @@ def getCallback(payload, responseStatus, token):
     dict = json.loads(payload)
     if responseStatus == "rejected" and dict['code'] == 404:
         print("shadow가 존재하지 않습니다.")
+
+        # shadow 기본값 설정하기
+        myJSONPayload = '{"state":{"desired":{"led":"on"}}}'
+        myDeviceShadow.shadowUpdate(myJSONPayload, updateCallback, 5)
     else:
-        print(dict['state']['desired']['led'])
+        print("현재 shadow의 값은 다음과 같습니다.")
+        print("led:" + dict['state']['desired']['led'])
         print(token)
 
     print("------------------------")
@@ -71,6 +76,3 @@ print("shadow connect! \n")
 myDeviceShadow = myShadowClient.createShadowHandlerWithName("dev01", True)
 
 myDeviceShadow.shadowGet(getCallback, 5)
-# shadow 값 변경하기
-# myJSONPayload = '{"state":{"desired":{"led":"on"}}}'
-# myDeviceShadow.shadowUpdate(myJSONPayload, updateCallback, 5)
