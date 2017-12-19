@@ -1,6 +1,6 @@
 const api = require('./api');
 const sendAPI = require('./send');
-const awsIoT = require('../iot-api/aws')
+//const awsIoT = require('../iot-api/aws')
 const awsIoTShadow = require('../iot-api/shadow')
 
 const postbackHandler = {};

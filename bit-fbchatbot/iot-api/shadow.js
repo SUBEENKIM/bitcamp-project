@@ -40,6 +40,12 @@ thingShadows
     });
 
   });
+thingShadows.on('status',
+  function(thingName, stat, clientToken, stateObject) {
+
+    console.log('received ' + stat + ' on ' + thingName + ': ' +
+      JSON.stringify(stateObject));
+  });
 
 thingShadows.on('timeout',
   function(thingName, clientToken) {
