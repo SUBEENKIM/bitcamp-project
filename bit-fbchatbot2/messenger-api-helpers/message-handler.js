@@ -111,6 +111,7 @@ addMessage('/addr/post', (recipientId, messageText) => {
 });
 const request = require('request');
 const UserStore = require("../stores/user_store")
+
 addMessage('user profile', (recipientId, messageText) => {
   const userProfile = UserStore.getByMessengerId(recipientId);
   request({
