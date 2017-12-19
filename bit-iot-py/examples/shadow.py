@@ -28,6 +28,10 @@ def getCallback(payload, responseStatus, token):
         print("현재 shadow의 값은 다음과 같습니다.")
         print("led:" + dict['state']['desired']['led'])
         print(token)
+        if dict['state']['desired']['led'] =="on":
+            led.onLed(True)
+        else:
+            led.onLed(False)
 
     print("------------------------")
     #
